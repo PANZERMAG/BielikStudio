@@ -1,0 +1,780 @@
+:root {
+    --primary-font: 35px;
+    --secondary-font: 28px;
+    --navigation-text-font: 20px;
+}
+
+@font-face {
+    font-family: "Koulen";
+    src: url("../fonts/Koulen-Regular.ttf");
+
+}
+
+html, body {
+    scrollbar-color: #458245 #714826; /* «цвет ползунка» «цвет полосы скроллбара» */
+    scrollbar-width: thin; /* толщина */
+}
+
+body {
+    background-color: black;
+    font-family: Roboto, sans-serif;
+}
+
+.intro {
+    max-height: 100%;
+}
+
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+
+    height: 100vh;
+    width: auto;
+}
+
+
+.video-media {
+    height: 100%;
+    width: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.header__logo {
+    margin: 10px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.header__navigation {
+    font-size: var(--secondary-font);
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.header__navigation a {
+    margin-inline: 20px;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(39, 39, 39, .44);
+}
+
+.contact-button {
+    padding: 5px;
+    color: white;
+    border: solid 2px white;
+    border-radius: 13px;
+    text-decoration: none;
+    transition: 0.5s;
+
+
+
+}
+
+.contact-button:hover {
+    background: white;
+    color: #181C67;
+    transition: 0.5s;
+}
+
+.main__text {
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+    font-size: 58px;
+}
+
+.container__main__text {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.portfolio-detail-grid{
+    display: grid;
+
+}
+
+.section-own {
+    height: 100vh;
+    overflow: hidden;
+
+    background-image: url('../imgs/bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.section-own-mirrored {
+
+    min-height: 100vh;
+    max-height: max-content;
+    overflow: hidden;
+
+    background-image: url('../imgs/bg.png');
+    background-size: cover;
+    transform: scaleY(-1);
+    background-position: center;
+
+}
+
+
+.solutions {
+    font-size: 58px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 20px;
+}
+
+.solutions-block {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 30px;
+
+    justify-items: center;
+}
+
+.solutions-main-text {
+    margin-top: 10px;
+
+    text-shadow: white;
+
+}
+
+.solutions-item {
+    height: 170px;
+    width: 170px;
+    background-color: rgba(217, 217, 217, .5);
+    margin-inline: 40px;
+    border-radius: 34px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.solutions-card {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.solutions-card p {
+    color: white;
+    font-size: var(--secondary-font);
+}
+
+.section__solutions {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-solution {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.solution-img {
+    width: 150px;
+    height: auto;
+}
+
+.primary-text {
+    color: white;
+    font-size: 58px;
+    margin-top: 20px;
+}
+
+.secondary-text {
+    color: #CFCECE;
+    font-size: var(--secondary-font);
+}
+
+.search-row {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.dropdown {
+    margin-inline: 20px;
+}
+
+.grid-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "element1 element2"
+        "element1 element3";
+}
+
+.grid-container div {
+    background-color: #CFCECE;
+    border-radius: 13px;
+}
+
+.element1 {
+    position: relative;
+    grid-area: element1;
+    width: 576px;
+    height: 576px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.element2 {
+    position: relative;
+    grid-area: element2;
+
+    width: auto;
+    height: auto;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.element3 {
+    position: relative;
+    grid-area: element3;
+
+    width: auto;
+    height: auto;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.element1, .element2, .element3 {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+
+.view-more-button {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav_button {
+    color: #CFCECE;
+    text-decoration: none;
+    transition: 0.5s;
+
+}
+
+.nav_button:hover {
+    transition: 0.5s;
+    color: white;
+}
+
+
+.portfolio-item-mini {
+    position: relative;
+    display: flex;
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 15vw;
+    height: 15vw;
+    background-color: #cfcfcf;
+
+    margin: 20px;
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 13px;
+
+}
+
+
+.portfolio-item-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.own-block {
+    width: 100%;
+    overflow-y: scroll;
+    background: white;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 5%;
+}
+
+.button-x {
+    justify-content: flex-end;
+    display: flex;
+}
+
+#PortfolioDiv {
+    transition: 1s;
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    overflow: auto;
+    justify-content: center;
+
+    flex-direction: column;
+    height: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    align-items: center;
+}
+
+#ContactForm {
+    transition: 1s;
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    overflow: auto;
+    justify-content: center;
+
+    flex-direction: column;
+    height: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+    align-items: center;
+}
+
+.tag-field {
+    background: #0d65ff;
+    font-size: 30px;
+    width: fit-content;
+    padding-inline: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.tag-field-mini {
+    background: #0d65ff;
+    font-size: 20px;
+    width: fit-content;
+    padding-inline: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+
+.grid-container div::before, .portfolio-item-mini::before {
+    color: white;
+    font-size: 20px;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container div:hover::before, .portfolio-item-mini:hover::before {
+    content: attr(data-count);
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.left-side {
+    width: 25%; /* занимает 25% общей ширины */
+    height: 100%; /* растягиваем на всю высоту */
+    position: relative; /* позиционирование относительное (для ::before) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* внутри элементы располагаем в колонку */
+}
+
+/* Стили разделительной линии между левой и правой колонкой */
+.left-side::before {
+    content: ""; /* контент нам не нужен */
+    position: absolute; /* позиционируем относительно .left-side */
+    height: 70%; /* высота 70% от .left-side */
+    width: 2px; /* ширина 2px */
+    background: #afafb6;
+    right: -15px; /* позиционируем справа + отступ 15px (справа) */
+    top: 50%; /* выравниваем по центру */
+    transform: translateY(-50%); /* выравниваем по центру */
+}
+
+/* Стили правой колонки */
+.right-side {
+    width: 75%; /* занимает 75% общей ширины */
+    margin-left: 75px;
+}
+
+/* Элементы левой колонки: адрес, телефон, email */
+.details {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Общие стили для иконок */
+.details i {
+    font-size: 25px; /* задаем размер */
+    color: #3e2093; /* задаем цвет */
+    margin-bottom: 10px;
+}
+
+/* Стили для заголовков левой колонки */
+.topic {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 7px; /* отступ снизу 7px */
+}
+
+/* Стили для текста левой колонки */
+.text-one,
+.text-two {
+    font-size: 14px;
+    color: #afafb6;
+}
+
+/* Заголовок правой колонки */
+.topic-text {
+    font-size: 23px;
+    font-weight: 600;
+    color: #3e2093;
+    margin-bottom: 10px;
+}
+
+/* Текст правой колонки */
+.right-side p {
+    margin-bottom: 20px;
+}
+
+/* Контейнер для input'ов формы */
+.input-box {
+    height: 50px; /* по сути задаем высоту input'а */
+    width: 100%; /* ширина на всю ширину правой колонки (с учетом padding) */
+    margin-bottom: 20px; /* отступаем снизу 20px */
+}
+
+/* Стили для input и textarea (поле сообщение) */
+.input-box input,
+.input-box textarea {
+    height: 100%; /* растягиваем на всю высоту контейнера 50px */
+    width: 100%; /* растягиваем на всю ширину */
+    border: none; /* убираем внешние края */
+    border-radius: 5px; /* скругляем края */
+    background: #f0f1f8; /* задаем цвет фона */
+    padding: 0 20px; /* отступ справа и слева 20px */
+}
+
+/* Отдельно стилизуем поле сообщение */
+.input-box textarea {
+    resize: none; /* чтобы нельзя было менять высоту */
+    padding: 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Это контейнер для поля сообщение */
+.message-box {
+    min-height: 110px; /* минимальная высота 110px */
+}
+
+/* Стили для контейнера кнопки */
+.button {
+    display: inline-block; /* делаем блочно-строчный элемент */
+}
+
+/* Стили для самой кнопки */
+.button input[type="Submit"] {
+    color: #fff;
+    font-size: 18px;
+    background: #3e2093;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    transition: 0.2s; /* чтобы плавно менялся цвет при наведении (:hover) */
+}
+
+/* Меняем цвет фона при наведении на кнопку */
+.button input[type="Submit"]:hover {
+    background: rgb(0, 0, 207);
+}
+
+.contact-block {
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+.image img{
+    width: 100%;
+}
+
+.video-section {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+@media (min-width: 576px) {
+    .container {
+        display: flex;
+        max-width: 540px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .element1 {
+        width: 350px;
+        height: 350px;
+    }
+
+    .header__logo {
+        width: 100px;
+    }
+
+    .header__navigation {
+        font-size: 18px;
+    }
+
+    .main__text {
+        font-size: 28px;
+    }
+
+    .solutions-main-text {
+        font-size: 40px;
+    }
+
+    .solutions-card {
+        width: 110px;
+    }
+
+    .solutions-card p {
+        font-size: 20px;
+        width: max-content;
+    }
+
+    .secondary-text {
+        width: max-content;
+    }
+
+
+}
+
+.container h2, .container h1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        display: flex;
+        /*align-items: center;*/
+    }
+
+    .secondary-text {
+        width: max-content;
+    }
+
+    .header__logo {
+        width: 155px;
+    }
+
+    .main__text {
+        font-size: 40px;
+    }
+
+    .solutions {
+        font-size: 40px;
+    }
+
+    .solutions-itme {
+        height: 150px;
+        width: 150px;
+    }
+
+    .solution-img {
+        width: 130px;
+        height: auto;
+    }
+
+    .solutions-card p {
+        font-size: 25px;
+    }
+
+    .solutions-card{
+        max-width: 170px;
+    }
+
+    .element1 {
+        width: 420px;
+        height: 420px;
+    }
+
+    .contact-button{
+        width: fit-content;
+    }
+
+    .view-more-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-block{
+        font-size: 25px;
+    }
+
+    .portfolio-item-mini {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .secondary-text{
+        font-size: 30px;
+    }
+
+    .search-row form{
+        width: 100%;
+    }
+
+    .primary-text{
+        font-size: 60px;
+    }
+
+    .header__navigation{
+        font-size: 28px;
+    }
+}
+
+.portfolio-detail-grid{
+    width: auto;
+    display: grid;
+
+    grid-template-areas:
+        "task task_res"
+        "sol sol_res";
+}
+
+@media (min-width: 992px) {
+    .container{
+        max-width: 960px;
+    }
+
+    .header__logo {
+        width: 155px;
+    }
+
+    .header__navigation {
+        font-size: 25px;
+    }
+
+    .main__text {
+        font-size: 45px;
+    }
+
+    .solutions {
+        font-size: 45px;
+    }
+
+    .element1 {
+        width: 600px;
+        height: 600px;
+    }
+
+    .grid-container {
+        margin-top: 0;
+    }
+
+    .portfolio-item-mini{
+        width: 20vw;
+        height: 20vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1140px;
+    }
+
+    .header__logo{
+        max-width: 200px;
+    }
+
+    .main__text{
+        font-size: 50px;
+    }
+    .container__main__text {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    flex-direction: column;
+}
+}
+
+@media (min-width: 1400px) {
+    .container{
+        max-width: 1320px;
+
+    }
+    .container__main__text {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    flex-direction: column;
+}
+}

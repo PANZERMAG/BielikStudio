@@ -1,0 +1,245 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="{% static 'src/css/style.css' %}">
+
+
+    <title>Home</title>
+</head>
+<body>
+<section id="#home" class="video-section">
+    <div class="intro">
+        <div class="video">
+            <video class="video-media" muted loop autoplay id="myVideo">
+                <source src="{% static 'src/video/pexels-rostislav-uzunov-5680034-1920x1080-24fps_2.mp4' %}">
+            </video>
+        </div>
+        <div class="intro__content">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="header">
+                        <img class="header__logo" src="{% static 'src/imgs/rewrite.svg' %}">
+                        <div class="header__navigation">
+                            <a class="nav_button" href="##solutions">Solutions</a>
+                            <a class="nav_button" href="/home#portfolio">Portfolio</a>
+                            <a class="contact-button" href="#">Write to us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__main__text container ">
+                <div class="main__text">
+                    <div style="display: flex; flex-direction: row">
+                        <p style="color: #181C67">BIELIK STUDIO </p>
+                        <p>- from concept to code,</p>
+                    </div>
+                    <p>we brings your dream</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="#solutions" class="section-own section__solutions">
+    <div class="solutions">
+        <p class="solutions-main-text">INDUSTRY SOLUTIONS</p>
+    </div>
+    <div class="container" style="height: 100%; display: flex; flex-direction: column; justify-content: center">
+        <div class="solutions-block">
+
+            <div class="solutions-card" style="grid-column: 1">
+                <div class="solutions-item" style="display: flex">
+                    <img class="solution-img" src="{% static 'src/imgs/crm.svg' %}">
+                </div>
+                <p>Integrate</p>
+                <p>crm-system</p>
+            </div>
+            <div class="solutions-card" style="grid-column: 3">
+                <div class="solutions-item">
+                    <img class="solution-img" src="{% static 'src/imgs/quality.svg' %}">
+
+                </div>
+                <p>Best quality</p>
+            </div>
+            <div class="solutions-card" style="grid-column: 5">
+                <div class="solutions-item">
+                    <img class="solution-img" src="{% static 'src/imgs/support.svg' %}">
+
+                </div>
+                <p>Long-term</p>
+                <p>project support</p>
+            </div>
+            <div class="solutions-card" style="grid-column: 2">
+                <div class="solutions-item">
+                    <img class="solution-img" src="{% static 'src/imgs/design.svg' %}">
+
+                </div>
+                <p>Adaptive design</p>
+            </div>
+            <div class="solutions-card" style="grid-column: 4">
+                <div class="solutions-item">
+                    <img class="solution-img" src="{% static 'src/imgs/defence.svg' %}">
+
+                </div>
+                <p>Project defense</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="portfolio" class="section-own-mirrored">
+    <div style="transform: scaleY(-1); display: flex; height: 100%">
+        <div class="container">
+
+            <p class="primary-text">portfolio</p>
+            <p class="secondary-text">{{ completed_count }} completed projects</p>
+            <div class="search-row">
+                <form style="display: flex; flex-direction: row" method="get" id="search-form">
+                    <div class="input-group" style="width: 35%; margin-right: 20px">
+                        {{ form.search_query }}
+                        <button id="btn1" class="btn btn-primary" type="submit" value="Search" href="##portfolio">find
+                        </button>
+                    </div>
+                    <div class="dropdown">
+                        {{ form.type_of_proj }}
+                    </div>
+                    <div class="dropdown">
+                        {{ form.tech_stack }}
+                    </div>
+                </form>
+            </div>
+            <div class="grid-container" id="search-results">
+                {% for i in first3_portfolio %}
+                    {% if forloop.counter|divisibleby:3 %}
+                        <div class="element3" onclick="window.location.assign('/portfolio-item/{{ i.id }}')"
+                             data-count="{{ i.short_desc }}"
+                             style="background-image: url('{{ i.logo_portfolio.url }}')">
+                    {% elif forloop.counter|divisibleby:2 %}
+                        <div class="element2" onclick="window.location.assign('/portfolio-item/{{ i.id }}')"
+                             data-count="{{ i.short_desc }}"
+                             style="background-image: url('{{ i.logo_portfolio.url }}')">
+                    {% else %}
+                        <div class="element1" onclick="window.location.assign('/portfolio-item/{{ i.id }}')"
+                             data-count="{{ i.short_desc }}"
+                             style="background-image: url('{{ i.logo_portfolio.url }}')">
+                    {% endif %}
+
+                <p class="tag-field">{{ i.tag.name }}</p>
+
+
+                </div>
+                {% endfor %}
+                </div>
+                <div class="container view-more-button">
+                    <a onclick="showDiv()" class="contact-button" style="font-size: 30px">view more</a>
+                </div>
+
+                </div>
+
+            </div>
+
+</section>
+<section id="#contact" class="section-own" style="display: flex; flex-direction: column">
+    <div class="container"
+         style="height: 100vh;width: 100%;display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        <p class="primary-text">Contact</p>
+        <p class="secondary-text">We will calculate the estimate</p>
+        <p class="secondary-text">and make architectural recommendations.</p>
+
+        <a class="contact-button" onclick="showContact()" style="font-size: 30px">write to us</a>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="container" style="display: flex; align-items: center">
+            <p style="font-size: 30px; color: white">
+                ©Bielik Studio, 2023
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<div id="PortfolioDiv">
+    <div class="container own-block">
+        <div onclick="hideDiv()" class="button-x">
+            <img style="margin: 20px" src="{% static 'src/imgs/x.svg' %}">
+        </div>
+        <div class="portfolio-item-block">
+            {% for i in portfolio %}
+                <div class="portfolio-item-mini" data-count="{{ i.short_desc }}"
+                     onclick="window.location.assign('/portfolio-item/{{ i.id }}')"
+                     style="background-image: url('{{ i.logo_portfolio.url }}')">
+                    <p class="tag-field-mini"> {{ i.tag.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div id="ContactForm">
+    <div class="contact-block">
+        <div style="position: absolute; top: 0; right: 0; margin: 20px">
+            <img onclick="hideContact()" src="{% static 'src/imgs/x.svg' %}">
+        </div>
+        <div class="left-side">
+            <img style="margin: 20px;" src="{% static 'src/imgs/rewrite_black.svg' %}">
+        </div>
+
+        <!-- Правая колонка: сама форма -->
+        <div class="right-side">
+
+            <!-- Заголовок для формы -->
+            <div class="topic-text">Contact with us</div>
+
+            <!-- Какой-то дополнительный текст -->
+            <p>
+                We will calculate the estimate
+                and make architectural recommendations.
+            </p>
+
+            <!-- Форма обратной связи -->
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="input-box">
+                    {{ lead_form.name }}
+                </div>
+                <div class="input-box">
+                    {{ lead_form.email }}
+                </div>
+                <div class="input-box">
+                    {{ lead_form.company_name }}
+                </div>
+                <div class="input-box message-box">
+                    {{ lead_form.description }}
+                </div>
+                <div class="button">
+                    <input type="Submit" value="Send"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'src/js/jquery.min.js' %}"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+
+<script src="{% static 'src/js/main.js' %}"></script>
+<script src="{% static 'src/js/search.js' %}"></script>
+
+</body>
+</html>
