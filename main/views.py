@@ -21,11 +21,6 @@ class HomeView(View):
         tags_proj = TypeOfProjModel.objects.all()
         tech_stack = TechnologiesModel.objects.all()
 
-        if len(portfolio_items) > 3:
-            first3_portfolio = portfolio_items[len(portfolio_items) - 3:]
-        else:
-            first3_portfolio = portfolio_items
-
         if form.is_valid():
             search_query = form.cleaned_data.get('search_query')
             type_of_proj = form.cleaned_data.get('type_of_proj')
